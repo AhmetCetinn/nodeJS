@@ -1,6 +1,16 @@
-var http=require("http");
-http.createServer(function(request,response){
-response.writeHead(200,{"Content-Type":"text/plain"});
-response.write("SUNUCUYA HOS GELDINIZ");
-response.end();
-}).listen(8888);
+var http = require("http");
+var fs = require("fs");
+var module1 = require("./module1");
+const server = http
+  .createServer((request, response) => {
+    //   fs.readFile('index.html', (err,data) => {
+    //       if(err)
+    //         throw err;
+    //         response.end(data);
+    //   })
+    response.writeHead(200,{
+        'content-type':'text/html;charset=utf-8'
+    });
+    response.end(module1.module1);
+  });
+  server.listen(3001);

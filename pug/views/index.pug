@@ -1,0 +1,16 @@
+html
+    body
+        div
+            - var text = 'js ıle backend yazıyorum'
+            h1(style="color:red") Selam ben #{name}
+            //express js ıcersınden gelen degısken name
+            =name
+            h2 #{text}
+            include footer 
+            //footer comp ekledık
+            if text !== undefined
+                h6 #{text}
+            each val in [1,2,3]
+                li= val
+    block contents
+        
